@@ -1,3 +1,15 @@
+// Fullscreen toggle function
+function toggleFullscreen() {
+    const elem = document.documentElement;
+    if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+
 // Calculate percentage when inputs change
 document.addEventListener('input', function(e) {
     if (e.target.classList.contains('target') || e.target.classList.contains('achieved')) {
